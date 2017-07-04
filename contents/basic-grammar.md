@@ -299,3 +299,18 @@ for i in range(100):
 def func(x):
     return x**2
 ```
+
+when you are on interactive mode,
+
+```py
+def func(x):
+    return x**2
+
+x = []
+y = []
+for i in range(100):
+    x.append(i)
+    y.append(func(i))
+print(x)
+print(y)
+```
