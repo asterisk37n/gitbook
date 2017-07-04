@@ -254,7 +254,7 @@ x.index(0) # ValueError
 
 Now you can calculate a sum of 1 to 100
 
-```
+```py
 s = 0
 for i in range(101):
     s = s + i
@@ -262,7 +262,7 @@ print(s)
 ```
 or
 
-```
+```py                                                                                        
 s = 0
 for i in range(101):
     s += s + 1
