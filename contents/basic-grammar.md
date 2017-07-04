@@ -150,6 +150,7 @@ You can embed variable in a string.
 ```py
 x = 'dog'
 s = 'HI, {}'.format(x)
+print(s)
 ```
 
 You can join strings.
