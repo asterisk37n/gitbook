@@ -252,6 +252,22 @@ x.index(2) # 1
 x.index(0) # ValueError
 ```
 
+Now you can calculate a sum of 1 to 100
+
+```
+s = 0
+for i in range(101):
+    s = s + i
+print(s)
+```
+or
+
+```
+s = 0
+for i in range(101):
+    s += s + 1
+print(s)
+```
 
 ## 3.9 tuple {#tuple}
 Think tuple is length unchangeable list.
