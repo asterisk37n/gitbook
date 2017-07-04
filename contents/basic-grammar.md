@@ -291,21 +291,8 @@ d['a'] # 0
 if you want to use some code repeatedly, you can make a function.
 
 ```py
-x = []
-y = []
-for i in range(100):
-    x.append(i)
-    y.append(func(i))
 def func(x):
     return x**2
-```
-
-when you are on interactive mode,
-
-```py
-def func(x):
-    return x**2
-
 x = []
 y = []
 for i in range(100):
