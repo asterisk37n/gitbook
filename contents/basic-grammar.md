@@ -265,7 +265,7 @@ or
 ```py                                                                                        
 s = 0
 for i in range(101):
-    s += s + 1
+    s += s + i 
 print(s)
 ```
 
