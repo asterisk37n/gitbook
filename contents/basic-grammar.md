@@ -276,7 +276,7 @@ if you want to use some code repeatedly, you can make a function.
 
 ```py
 x = []
-y = {]
+y = []
 for i in range(100):
     x.append(i)
     y.append(func(i))
