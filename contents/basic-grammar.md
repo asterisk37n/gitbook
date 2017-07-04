@@ -219,7 +219,7 @@ a[-1] # 'c'
 a[0:2] # ['a', 'b']
 ```
 
-list.pop deltes an element from a list and returns the element.
+list.pop deletes an element from a list and returns the element.
 
 ```py
 x = a.pop() # 'c'
@@ -265,7 +265,7 @@ x = t[0]
 In list and tuple, order matters. In dict, order does not matter. It makes pairs of key:value.
 
 ```py
-d = {'a', 0, 'b', 1, 'c':[-1,-2]}
+d = {'a': 0, 'b': 1, 'c':[-1,-2]}
 d['d'] = 'new key'
 d[0] = 0
 d['a'] # 0
