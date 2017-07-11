@@ -13,6 +13,7 @@ Question 10 is from [Atcoder Regular Contest 076](http://arc076.contest.atcoder.
 
 ### Q1 Odd sum
 Caulculate the sum of 1 + 3 + ... + 99
+
 [answer](#answer1)
 
 ### Q2 FizzBuzz

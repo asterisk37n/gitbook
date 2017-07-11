@@ -24,6 +24,6 @@
     * [3.11 function](contents/basic-grammar.md#function)
 * [4. Exercise](contents/exercise.md)
     * [4.1 Questions](contents/exercise.md#questions)
-    * [4.2 answers](contents/exercise.md#answers)
+    * [4.2 Answers](contents/exercise.md#answers)
 * [Postscript](contents/postscript.md)
 
