@@ -12,7 +12,7 @@ Question 10 is from [Atcoder Regular Contest 076](http://arc076.contest.atcoder.
 ## Questions {#questions}
 
 ### Q1 Odd sum
-Caulculate the sum of 1 + 3 + ... + 99
+Caulculate the sum of 1 + 3 + ... + 99 + 100
 
 [answer](#answer1)
 
@@ -20,6 +20,7 @@ Caulculate the sum of 1 + 3 + ... + 99
 Counts the numbers, but when the number is divisible by three, replace by "fizz",
 divisible by fibe by the word "buzz", and divisible by both by "fizzbuzz"
 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, FIzz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, Fizz, ...
+
 [answer](#answer2)
 
 ### Q3 Fibonacci numbers
@@ -32,10 +33,12 @@ Add the last two numbers to create the next number. Start with 1, 1.
 8
 11
 ...
+
 [answer](#answer3)
 
 ### Q4 
 Find the integers x, y, and z satisfying $$x + y + z = 1000, 0 < x <= y <= z$$
+
 [answer](#answer4)
 
 ### Q5 Hello world in the rectangular
@@ -50,6 +53,7 @@ Write a function that takes a list of strings an pdrints them, one per line, in 
 * frame *
 *********
 ```
+
 [answer](#answer5)
 
 ### Q6 Restricted
@@ -71,6 +75,7 @@ Sample Output 2
 ```
 error
 ```
+
 [answer](#answer6)
 
 ### Q7 Varied
@@ -98,6 +103,7 @@ Sample Output2
 '''
 no
 '''
+
 [answer](#answer7)
 
 ### Q8 Judge it the number is more than 1200
@@ -119,6 +125,7 @@ Sample Output 2
 ```
 ARC
 ```
+
 [answer](#answer8)
 
 ### Q9 Push and reverse
@@ -169,6 +176,7 @@ Sample Output 3
 ```
 1000000
 ```
+
 [answer](#answer9)
 
 
@@ -199,6 +207,7 @@ When N = 3, M = 2, output is 12.
 Sample 3
 When N = 1, M = 8, output is 0
 When N = 100000, M = 100000, output is 530123477
+
 [answer](#answer10)
 
 ---
@@ -304,7 +313,7 @@ for x in range(1, 34):
 ### Answer 5 {#answer5}
 
 ```py
-def rec(x)
+def rec(x):
     maxlen = len(max(x, key=len))
     print('*' * (maxlen + 2)) 
     for row in x:
@@ -344,8 +353,8 @@ def different(s):
     print('no' * (len(set(s)) < len(s)) or 'yes')
 ```
 
-'no' * false is false. false or 'yes' returns false
-'no * True is 'no'. 'no' or 'yes' returns 'no'.
+'no' \* false is false. false or 'yes' returns false
+'no \* True is 'no'. 'no' or 'yes' returns 'no'.
 
 ### Answer 8 {#answer8}
 
