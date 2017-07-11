@@ -19,6 +19,7 @@ Caulculate the sum of 1 + 3 + ... + 99 + 100
 ### Q2 FizzBuzz
 Counts the numbers, but when the number is divisible by three, replace by "fizz",
 divisible by fibe by the word "buzz", and divisible by both by "fizzbuzz"
+
 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, FIzz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, Fizz, ...
 
 [answer](#answer2)
@@ -37,14 +38,15 @@ Add the last two numbers to create the next number. Start with 1, 1.
 [answer](#answer3)
 
 ### Q4 
-Find the integers x, y, and z satisfying $$x + y + z = 1000, 0 < x <= y <= z$$
+Find the integers x, y, and z satisfying
+$$x + y + z = 1000, 0 < x <= y <= z$$
 
 [answer](#answer4)
 
 ### Q5 Hello world in the rectangular
 Write a function that takes a list of strings an pdrints them, one per line, in a rectangular frame. For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 
-```py
+```
 *********
 * Hello *
 * World *
@@ -62,15 +64,18 @@ You have two inputs A and B. Calculate the value A+B and output it, but when A +
 Sample Input 1
 ```
 6 3
+
 ```
 Sample Output 1
 ```
 9
 ```
+
 Sample Input 2
 ```
 6 4
 ```
+
 Sample Output 2
 ```
 error
@@ -99,6 +104,7 @@ Sample Input 2
 ```
 different
 ```
+
 Sample Output2
 '''
 no
@@ -112,6 +118,7 @@ Sample Input 1
 ```
 1000
 ```
+
 Sample Output 1
 ```
 ABC
@@ -132,18 +139,18 @@ ARC
 
 Problem Statement
 
-You are given an integer sequence of length n, a1,…,an. Let us consider performing the following n operations on an empty sequence b.
+You are given an integer sequence of length n, a[1],…,a[n]. Let us consider performing the following n operations on an empty sequence b.
 
 The i-th operation is as follows:
 
-    Append ai to the end of b.
+    Append a[i] to the end of b.
     Reverse the order of the elements in b.
 
 Find the sequence b obtained after these n operations.
 Constraints
 
     1≤n≤2×105
-    0≤ai≤109
+    0≤a[i]≤109
     n and ai are integers.
 
 Sample Input 1
@@ -155,23 +162,30 @@ Sample Output 1
 4 2 1 3
 ```
 As operation follows
+
 1 -> 1
+
 1, 2 -> 2, 1
+
 2, 1, 3 -> 3, 1, 2
+
 3, 1, 2, 4 -> 4, 2, 1, 3
 
 Sample Input 2
 ```
 1 2 3
 ```
+
 Sample Output 2
 ```
 3 2 1
 ```
+
 Sample Input 3
 ```
 1000000
 ```
+
 Sample Output 3
 ```
 1000000
@@ -185,7 +199,7 @@ Snuke has N dogs and M monkeys. He wants them to line up in a row.
 
 As a Japanese saying goes, these dogs and monkeys are on bad terms. ("ken'en no naka", literally "the relationship of dogs and monkeys", means a relationship of mutual hatred.) Snuke is trying to reconsile them, by arranging the animals so that there are neither two adjacent dogs nor two adjacent monkeys.
 
-How many such arrangements there are? Find the count modulo $$10^9+7$$ (since animals cannot understand numbers larger than that). Here, dogs and monkeys are both distinguishable. Also, two arrangements that result from reversing each other are distinguished.
+How many such arrangements there are? Find the count modulo 10^9+7 (since animals cannot understand numbers larger than that). Here, dogs and monkeys are both distinguishable. Also, two arrangements that result from reversing each other are distinguished.
 Constraints
 
     1≤N,M≤105
@@ -194,18 +208,29 @@ Sample 1
 When N = 2, M = 2, Output is 8.
 
 Monkey1, Dog1, Monkey2, Dog2
+
 Monkey1, Dog2, Monkey2, Dog1
+
 Monkey2, Dog1, Monkey1, Dog2
+
 Monkey2, Dog2, Monkey1, Dog1
+
 Dog1, Monkey1, Dog2, Monkey2
+
 Dog1, Monkey2, Dog2, Monkey1
+
 Dog2, Monkey1, Dog1, Monkey2
+
 Dog2, Monkey2, Dog1, Monkey1
 
 Sample 2
+
 When N = 3, M = 2, output is 12.
+
 Sample 3
+
 When N = 1, M = 8, output is 0
+
 When N = 100000, M = 100000, output is 530123477
 
 [answer](#answer10)
