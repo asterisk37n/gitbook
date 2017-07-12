@@ -12,7 +12,7 @@ Question 10 is from [Atcoder Regular Contest 076](http://arc076.contest.atcoder.
 ## Questions {#questions}
 
 ### Q1 Odd sum
-Caulculate the sum of 1 + 3 + ... + 99 + 100
+Caulculate the sum of 1 + 3 + ... + 99
 
 [answer](#answer1)
 
@@ -26,20 +26,14 @@ divisible by fibe by the word "buzz", and divisible by both by "fizzbuzz"
 
 ### Q3 Fibonacci numbers
 Add the last two numbers to create the next number. Start with 1, 1.
-1
-1
-2
-3
-5
-8
-11
-...
+
+1, 1, 2, 3, 5, 8, 13, 21, ...
 
 [answer](#answer3)
 
 ### Q4 
 Find the integers x, y, and z satisfying
-$$x + y + z = 1000, 0 < x <= y <= z$$
+x + y + z = 100, 0 < x <= y <= z
 
 [answer](#answer4)
 
@@ -106,9 +100,9 @@ different
 ```
 
 Sample Output2
-'''
+```
 no
-'''
+```
 
 [answer](#answer7)
 
@@ -223,14 +217,18 @@ Dog2, Monkey1, Dog1, Monkey2
 
 Dog2, Monkey2, Dog1, Monkey1
 
+
 Sample 2
 
 When N = 3, M = 2, output is 12.
+
 
 Sample 3
 
 When N = 1, M = 8, output is 0
 
+
+Sample 4
 When N = 100000, M = 100000, output is 530123477
 
 [answer](#answer10)
@@ -267,7 +265,7 @@ for i in range(1, 101):
 ```
 
 This is called generator with def ... yield. This is faster than above with list.
-```
+```py
 def fizzbuzz(n):
     for i in range(1, n+1):
         if i % 15 == 0:
@@ -421,7 +419,7 @@ def pushpush(al):
 pushpush([1,2,3,4]) # 4 2 1 3
 ```
 
-### Answer110 {#answer10}
+### Answer 10 {#answer10}
 This code works but heavy.
 ```py
 import math
