@@ -306,7 +306,7 @@ for i in fib():
 
 ### Answer 4 {#answer4}
 
-The most simple answer is the below. $$O(n^3)$$
+The most simple answer is the below. Order is O(n^3).
 ```py
 for x in range(1,100):
     for y in range(x, 100):
@@ -315,7 +315,7 @@ for x in range(1,100):
                 print(x, y, z)
 ```
 
-The third loop fo z is not needed. $$O(n^2)$$
+The third loop fo z is not needed. Order is O(n^2).
 ```py
 for x in range(1, 100):
     for y in range(x, 100):
