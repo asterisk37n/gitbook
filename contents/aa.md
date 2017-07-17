@@ -17,9 +17,19 @@ Ascii art is a graphic style composed of alphabets and symboles.
 
 ![matrix](../images/matrix_dodge_aa_fs32.gif)
 
-## Load Image {##load-image}
-You will use Python Image Library. If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
+## 5.2 Load Image {##load-image}
+You use Python Image Library. If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
+We use the sample input image ```Lenna.png``` . Locate the image in the same folder as .py file.
 
+First, you load an image and print its size.
+
+```py
+from PIL Import Image
+img = Image.open('Lenna.png')
+print(img.size)
+```
+
+![Lenna](../images/Lenna.png)
 
 ## Convert into Grayscale {#convert-into-grayscale}
 
