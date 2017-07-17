@@ -8,3 +8,12 @@ You can start to study programming and publish your service online in the shorte
 - People who want to start to study programming
 - People who studied but don't know how to publish a service
 - People who have an nice idea and looking for somebody to develop it
+
+# Contents {#contents}
+Contents is aimed at building a skill to write and read a code. You are supposed to write by yourself and meet many errors.
+1. Install Python
+2. Execute simple code
+3. Basic grammar to remember. Only important things.
+4. You have to try exercises on your own to learn coding.
+5. It's time to build the first application. We convert an image into an ascii art.
+6. Publish your application to the world!
