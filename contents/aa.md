@@ -24,7 +24,7 @@ We use the sample input image ```Lenna.png``` . Locate the image in the same fol
 First, you load an image and print its size.
 
 ```py
-from PIL Import Image
+from PIL import Image
 img = Image.open('Lenna.png')
 print(img.size)
 ```
