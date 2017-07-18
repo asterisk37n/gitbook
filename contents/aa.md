@@ -1,6 +1,6 @@
 # 5. Create Ascii Art Applicaion
 
-## What is an Ascii Art? {#what-is-an-ascii-art}
+## 5.1 What is Ascii Art? {#what-is-ascii-art}
 Ascii art is a graphic style composed of alphabets and symboles.
 
 ![Beethoven](../images/Beethoven_AsciiMSGothicRegular23.png)
@@ -17,7 +17,7 @@ Ascii art is a graphic style composed of alphabets and symboles.
 
 ![matrix](../images/matrix_dodge_aa_fs32.gif)
 
-## 5.2 Load Image {##load-image}
+## 5.2 Load Image {#load-image}
 You use Python Image Library. If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
 We use the sample input image ```Lenna.png``` . Locate the image in the same folder as .py file.
 
