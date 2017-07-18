@@ -183,7 +183,7 @@ output_img.show()
 
 ![Lenna-fontsize12](../images/Lenna-fontsize12.png)
 
-It lookes better. The input image size is 512 x 512. When fontsize = 24, 512 // 24 = 21 characters are written in each row, and when fontsize = 12, 512 / /12 = 42 characters are done likewise.
+It lookes better. The input image size is 512 x 512. When fontsize = 24, as 512 / 24 = 21.3... so 22 characters are written in each row, and when fontsize = 12, as 512 / 12 = 42.6..., so 43 characters are done likewise.
 
 ## 5.6 Save Image {#save-image}
 Add the last line to save an image.
