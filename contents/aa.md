@@ -137,7 +137,53 @@ for y in range(0, h, fontsize): # The third parameter in range is a step
 output_img.show()
 ```
 
-![aa fontsize24](../images/aa-fontsize24.png)
+![Lenna-fontsize24](../images/Lenna-fontsize24.png)
+
+It is too low image quality. Change fontsize to 12 by ```fontsize = 12``` and re-run.
+
+```py
+from PIL import Image, ImageFont, ImageDraw
+img = Image.open('Lenna.png')
+w, h = img.size
+pixels = img.load()
+fontsize = 12
+fontpath = 'path/to/your/font'
+# On windows, fontpath = 'C://Windows/Fonts/msgothic.ttc'
+# On Mac, fontpath ='/System/Library/Fonts/Menlo.ttc'
+font = ImageFont.truetype(fontpath, fontsize, encoding='utf-8'
+output_img = Image.new(mode='RGBA', size=(w,h), color=(255,255,255))
+draw = ImageDraw.Draw(output_img)
+for y in range(0, h, fontsize): # The third parameter in range is a step 
+    for x in range(0, w, fontsize):
+        r, g, b = pixels[x, y]
+        gray = r * 0.2326 + g * 0.7152 + b * 0.0722
+        if gray  > 225:
+            character = ' '
+        elif gray > 200:
+            character = '.'
+        elif gray > 175:
+            character = ','
+        elif gray > 150:
+            character = ':'
+        elif gray > 125:
+            character = ';'
+        elif gray > 100:
+            character = '+'
+        elif gray > 75:
+            character = '*'
+        elif gray > 50:
+            character = '%'
+        elif gray > 25:
+            character = '#'
+        else:
+            character = 'W'
+        draw.text((x, y), character, font=font, fill = '#000000') # #000000 corresponds black
+output_img.show()
+```
+
+![Lenna-fontsize12](../images/Lenna-fontsize12.png)
+
+It lookes better. The input image size is 512 x 512. When fontsize = 24, 512 // 24 = 21 characters are written in each row, and when fontsize = 12, 512 / /12 = 42 characters are done likewise.
 
 ## 5.6 Save Image {#save-image}
 Add the last line to save an image.
@@ -147,7 +193,7 @@ from PIL import Image, ImageFont, ImageDraw
 img = Image.open('Lenna.png')
 w, h = img.size
 pixels = img.load()
-fontsize = 24
+fontsize = 12
 fontpath = 'path/to/your/font'
 font = ImageFont.truetype(fontpath, fontsize, encoding='utf-8')
 output_img = Image.new(mode='RGBA', size=(w,h), color=(255,255,255))
