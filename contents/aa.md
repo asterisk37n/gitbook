@@ -21,18 +21,156 @@ Ascii art is a graphic style composed of alphabets and symboles.
 You use Python Image Library. If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
 We use the sample input image ```Lenna.png``` . Locate the image in the same folder as .py file.
 
-First, you load an image and print its size.
+First, You write very simple code. you load an image, print its size and show the image.
 
 ```py
 from PIL import Image
 img = Image.open('Lenna.png')
 print(img.size)
+img.show()
 ```
+
+Ctrl + C to quit.
 
 ![Lenna](../images/Lenna.png)
 
-## Convert into Grayscale {#convert-into-grayscale}
+## 5.3 Convert into Grayscale {#convert-into-grayscale}
+Each pixel is defined by the value of red, green and blue, (r, g, b), 0 <= r <= 255, 0<= g <= 255, 0 <= b <= 255. (r, g, b) is converted into the intensity (or Brightness) by
+```
+gray = red * 0.2126 + green * 0.7152 + b * 0.0722
+```
 
-## Draw Ascii Art {#draw-ascii-art}
+You can see pixel data by load()
 
-## Save Image {#save-image}
+```py
+from PIL import Image
+img = Image.open('Lenna.png')
+pixels = img.load()
+print(pixels)
+```
+
+Bunch of (r, g, b) is shown now. Each pixel is accessed by ```pixels[x,y], 0 <= x < width, 0 <= y < height```. xy Coordination in a image is below.
+
+O---------> x
+|
+|
+|   Image
+|
+|/
+y
+
+convert them into grayscale because we are making grayscale ascii art.
+```py
+from PIL import Image
+img = Image.open('Lenna.png')
+w, h = img.size
+pixels = img.load()
+for y in range(h):
+    row = []
+    for x in range(w):
+        r, g, b = pixels[x, y]
+        gray = r * 0.2326 + g * 0.7152 + b * 0.0722
+        print(gray)
+```
+
+
+## 5.4 Prepare for a white canvas, font and drawing {#prepare-canvas}
+You create a white canvas to output. import other libraries.
+
+```py
+from PIL import Image, ImageFont, ImageDraw
+img = Image.open('Lenna.png')
+w, h = img.size
+pixels = img.load()
+fontsize = 24
+font = ImageFont.truetype("path/to/font.ttc", fontsize, encoding='utf-8') # In Windows, C://Windows/Fonts/msgothic.ttc
+output_img = Image.new(mode='RGBA', size=(w,h)) # white canvas. Its size is the same as the input image's size.
+draw = ImageDraw.Draw(output_img)
+for y in range(h):
+    for x in range(w):
+        r, g, b = pixels[x, y]
+        gray = r * 0.2326 + g * 0.7152 + b * 0.0722
+output_img.show()
+```
+
+## 5.5 Draw Ascii Art {#draw-ascii-art}
+Put a character corresponding to the grayscale in the same pixel of the input image. x and y should step by fontsize. Monospaced font is recommended.
+We divide 0-255 grayscale into ten levels. Edit in for loop.
+
+```py
+from PIL import Image, ImageFont, ImageDraw
+img = Image.open('Lenna.png')
+w, h = img.size
+pixels = img.load()
+fontsize = 24
+font = ImageFont.truetype("path/to/font.ttc", fontsize, encoding='utf-8') # In Windows, C://Windows/Fonts/msgothic.ttc
+output_img = Image.new(mode='RGBA', size=(w,h)) # white canvas
+draw = ImageDraw.Draw(output_img)
+for y in range(h):
+    for x in range(w):
+        r, g, b = pixels[x, y]
+        gray = r * 0.2326 + g * 0.7152 + b * 0.0722
+        if gray  > 225:
+            character = ' '
+        elif gray > 200:
+            character = '.'
+        elif gray > 175:
+            character = ','
+        elif gray > 150:
+            character = ':'
+        elif gray > 125:
+            character = ';'
+        elif gray > 100:
+            character = '+'
+        elif gray > 75:
+            character = '*'
+        elif gray > 50:
+            character = '%'
+        elif gray > 25:
+            character = '#'
+        else:
+            character = 'W'
+        draw.text((x, y), character, font=font, fill = '#000000') # #000000 means black
+output_img.show()
+```
+
+## 5.6 Save Image {#save-image}
+Add the last line to save an image.
+
+```py
+from PIL import Image, ImageFont, ImageDraw
+img = Image.open('Lenna.png')
+w, h = img.size
+pixels = img.load()
+fontsize = 24
+font = ImageFont.truetype("path/to/font.ttc", fontsize, encoding='utf-8') # In Windows, C://Windows/Fonts/msgothic.ttc
+output_img = Image.new(mode='RGBA', size=(w,h)) # white canvas
+draw = ImageDraw.Draw(output_img)
+for y in range(h):
+    for x in range(w):
+        r, g, b = pixels[x, y]
+        gray = r * 0.2326 + g * 0.7152 + b * 0.0722
+        if gray  > 225:
+            character = ' '
+        elif gray > 200:
+            character = '.'
+        elif gray > 175:
+            character = ','
+        elif gray > 150:
+            character = ':'
+        elif gray > 125:
+            character = ';'
+        elif gray > 100:
+            character = '+'
+        elif gray > 75:
+            character = '*'
+        elif gray > 50:
+            character = '%'
+        elif gray > 25:
+            character = '#'
+        else:
+            cjaracter = 'W'
+        draw.text((x, y), character, font=font, fill = '#000000') # #000000 means black
+output_img.save('Lenna_AA.png')
+```
+
