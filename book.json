@@ -1,8 +1,8 @@
 {
-    "plubins": ["ga"]
+    "plubins": ["ga"],
     "pluginsConfig": {
         "ga": {
             "token": "UA-54290310-5"
-	}
-    }	
+        }
+    }
 }
