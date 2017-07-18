@@ -33,7 +33,7 @@
     * [5.4 Prepare for a canvas](contents/aa.md#prepare-canvas)
     * [5.5 Draw Ascii Art](contents/aa.md#draw-ascii-art)
     * [5.6 Save Image](contents/aa.md#save-image)
-* [6. Create a web service](contents/webapp.md)
+* [6. Create a web service (not ready)](contents/webapp.md)
     * [6.1 We use flask](contents/webapp.md)
     * [6.2 Just say hi](contents/webapp.md#hi)
     * [6.3 Make uploader](contents/webapp.md#uploader)
