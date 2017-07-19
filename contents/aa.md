@@ -18,10 +18,14 @@ Ascii art is a graphic style composed of alphabets and symboles.
 ![matrix](../images/matrix_dodge_aa_fs32.gif)
 
 ## 5.2 Load Image {#load-image}
-You use Python Image Library. If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
-We use the sample input image ```Lenna.png``` . Locate the image in the same folder as .py file.
+You use Python Image Library (PIL). If you installed Python with Anaconda, it alredy installed the library, otherwise execute ```pip install Pillow```.
+We use the sample input image ```Lenna.png``` .
 
-First, You write very simple code. you load an image, print its size and show the image.
+First, Download the image 
+
+![Lenna](../images/Lenna.png)
+
+to the same folder a source code is in. Start with very simple code: Load an image, print its size and show the image.
 
 ```py
 from PIL import Image
@@ -32,7 +36,7 @@ img.show()
 
 (512, 512)
 
-![Lenna](../images/Lenna.png)
+and the image is shown.
 
 ## 5.3 Convert into Grayscale {#convert-into-grayscale}
 Each pixel is defined by the value of red, green and blue, (r, g, b), 0 <= r <= 255, 0<= g <= 255, 0 <= b <= 255. (r, g, b) is converted into the intensity (or Brightness) by
@@ -61,7 +65,7 @@ Bunch of (r, g, b) is shown now. Each pixel is accessed by ```pixels[x,y], 0 <= 
 convert them into grayscale because we are making grayscale ascii art.
 ```py
 from PIL import Image
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB') # in case RGBA mode, convert to RGB
 w, h = img.size
 pixels = img.load()
 for y in range(h):
@@ -78,7 +82,7 @@ You create a white canvas to output. import other libraries.
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 24
@@ -98,7 +102,7 @@ We divide 0-255 grayscale into ten levels. Edit for-loops.
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 24
@@ -142,7 +146,7 @@ It is too low image quality. Change fontsize to 12 by ```fontsize = 12``` and re
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 12
