@@ -69,7 +69,6 @@ img = Image.open('Lenna.png').convert('RGB') # in case RGBA mode, convert to RGB
 w, h = img.size
 pixels = img.load()
 for y in range(h):
-    row = []
     for x in range(w):
         r, g, b = pixels[x, y]
         gray = r * 0.2326 + g * 0.7152 + b * 0.0722
