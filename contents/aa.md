@@ -51,13 +51,12 @@ print(pixels)
 
 Bunch of (r, g, b) is shown now. Each pixel is accessed by ```pixels[x,y], 0 <= x < width, 0 <= y < height```. xy Coordination in a image is below.
 
-O---------> x  
-|  
-|  
-|   Image  
-|  
-|/  
-y
+  O-------------------> x  
+  |  
+  |         Image  
+  |  
+  |/  
+  y
 
 convert them into grayscale because we are making grayscale ascii art.
 ```py
