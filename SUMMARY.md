@@ -4,7 +4,6 @@
 * [1. About book](README.md#about-book)
     * [1.1 Motivation](README.md#motivation)
     * [1.2 Target](README.md#target)
-    * [1.3 Contents](README.md#cotents)
 
 ## Contents
 * [1. Install Anaconda](contents/install.md)
