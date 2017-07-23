@@ -44,7 +44,7 @@
 * [7. Run Ascii Art Convertor Local](contents/app-local.md)
     * [7.1 Ascii Art Function](contents/app-local.md#func)
     * [7.2 Full Code](contents/app-local.md#full)
-* [8. PUblish Ascii Art Application](contents/publish.md)
+* [8. Publish Ascii Art Application](contents/publish.md)
     * [8.1 Register Heroku](contents/publish.md#register)
     * [8.2 Prepare files](contents/publish.md#prepare)
 * [Postscript](contents/postscript.md)
