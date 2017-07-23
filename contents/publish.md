@@ -233,9 +233,10 @@ $ git commit -m "initial commit"
 $ git push heroku master
 ```
 
-![heroku-app](heroku-app.png)
+![heroku-app](../images/heroku-app.png)
 
 After uploaded an image,
 
-![heroku-aa](heroku-aa.png)
+![heroku-aa](../images/heroku-aa.png)
 
+Bravo!

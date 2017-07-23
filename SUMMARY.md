@@ -47,5 +47,6 @@
     * [8.1 Register Heroku](contents/publish.md#register)
     * [8.2 Prepare files](contents/publish.md#prepare)
     * [8.3 Deploy to Heroku](contents/publish.md#deploy)
-* [Postscript](postscript.md)
 
+## Postscript
+* [Postscript](postscript.md)
