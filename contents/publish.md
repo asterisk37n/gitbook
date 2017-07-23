@@ -10,7 +10,7 @@ Create a new application on Heroku.
 ![heroku-new-app](../images/new-app.png)
 
 
-## 8.2 Prepare files
+## 8.2 Prepare files {#prepare}
 
 ### Make a deploy direcory
 Make a deploy directory and go into there
@@ -198,7 +198,7 @@ aa
 
 ```
 
-## 8.3 Deploy to Heroku
+## 8.3 Deploy to Heroku {#deploy}
 Deployment follows Heroku official guide for Flask
 
 https://devcenter.heroku.com/articles/getting-started-with-python#set-up
