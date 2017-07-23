@@ -22,15 +22,16 @@ sample.py
 ```py
 from flask import Flask
 app = FLask(__name__)
-@app.route('/'):
+@app.route('/')
+def hello():
     return 'Hello World!'
-app.run
+app.run()
 ```
 
 execute ```python sample.py```.
 Now head over to [http://localhost:5000](http://localhost:5000), and you should see your hello world greeting.
 
-![Hi](../img/hello.png)
+![Hello](../images/flask-hello.png)
 
 
 ## 6.4 Change URL (Rooting) {#rooting}
@@ -41,25 +42,29 @@ route function is used to bind a url and a function. Here are basic examples.
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/'):
+@app.route('/')
+def index():
     return 'Index page'
 
-@app.route('hello'):
+@app.route('/hello')
+def hello():
     return 'Hello world!'
 
-app.run
+app.run()
 ```
 
-Visit
-http://localhost:5000
+Visit  
+http://localhost:5000  
 http://localhost:5000/hello
 
 
-You can put a variable in a URL as ```<variable_name>```. It can be used as a keyword argument to your function.
+
+Also, You can put a variable in a URL as ```<variable_name>```. It can be used as a keyword argument to your function.
 
 
 ```py
 from flask import Flask
+
 app = Flask(__name__)
 
 @app.route('/user/<username>')
@@ -72,15 +77,16 @@ def show_post(post_id):
     # show the post with the given id, the id is an integer
     return 'Post {}'.format(post_id)
 
-app.run
+app.run()
 ```
 
-## 6.5 URL Building
+## 6.5 URL Building {#building}
 
 You can get URL from function by url_for.
 
 ```py
 from flask import Flask, url_for
+
 app = Flask(__name__)
 @app.route('/')
 def index(): pass
@@ -107,20 +113,41 @@ It shows
 ## 6.6 Simple GET and POST {#get-and-post}
 How do you send your name and email address to a website? It uses input format. When you just see a page, method is called GET, and when you upload something, method is called POST.
 
+```py
+from flask import Flask, request
 
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def form():
+    if request.method == 'POST':
+        name = request.form['yourname']
+        return 'Welcome {}'.format(name)
+    return '''<form action ="/" method="POST">
+    Name <input type="text" name=yourname>
+    <input type="submit" value="Submit"></form>'''
+app.run()
+```
+
+![flask-form](../images/flask-form.png)  
+![flask-form-post](../images/flask-form-post.png)
 
 ## 6.7 Create Uploader {#uploader}
 This section is based on  
 [http://flask.pocoo.org/docs/0.12/patterns/fileuploads/](http://flask.pocoo.org/docs/0.12/patterns/fileuploads/)
 
-We prepare uploader. 
-TODO: flash
+We prepare an uploader. 
+You have to make uploader folder from source file like followings:  
+```$ mkdir uploads```  
+and replace 5th line with  
+```UPLOAD_FOLDER = 'uploads'```.
+
 ```py
 import os
-from flask import Flask, request, redirect, url_for, send_from_directory
+from flask import Flask, request, redirect, url_for, send_from_directory, flash
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/path/to/the/uploads'
+UPLOAD_FOLDER = '/path/to/the/uploads' # 'uploads' when you follow the above.
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
@@ -162,30 +189,7 @@ def upload_file():
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
-app.run
+app.run()
 ```
 
-## 6.8 Ascii art converter {#aa}
-
-We have made a following code in the previous lesson.
-
-```py
-
-```
-
-From the previous lesson, we can make an ascii art function. Input and output are Images.
-
-```py
-
-```
-
-## 6.9 Register Heroku
-
-## 6.10 Prepare for files to publish
-
-Prepare folloing files
-1.
-2.
-3.
-
-## Publish Application
+![uploader](../images/uploader.png)
