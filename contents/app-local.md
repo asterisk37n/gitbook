@@ -1,4 +1,4 @@
-# 7. Run Ascii Art Convertor Local
+# 7. Run Ascii Art COnverter Local
 
 ## 7.1 Ascii art function {#func}
 From the 5 Create Ascii Art Application, you can create an ascii art function.
@@ -136,8 +136,8 @@ def upload_file():
     # Change a title and heading
     return '''
     <!doctype html>
-    <title>Ascii Art Convertor</title>
-    <h1>Ascii Art Convertor</h1>
+    <title>Ascii Art Converter</title>
+    <h1>Ascii Art Converter</h1>
     <form method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
