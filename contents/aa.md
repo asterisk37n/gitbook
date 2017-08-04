@@ -40,11 +40,11 @@ Each pixel is defined by the value of red, green and blue, (r, g, b), 0 <= r <= 
 gray = red * 0.2126 + green * 0.7152 + b * 0.0722
 ```
 
-You can see pixel data by load()
+You can see pixel data by load(). Also, convert image type by ```.convert('RGB')``` for when an input image's mode is not RGB.
 
 ```py
 from PIL import Image
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 pixels = img.load()
 print(pixels)
 ```
@@ -62,7 +62,7 @@ y
 convert them into grayscale because we are making grayscale ascii art.
 ```py
 from PIL import Image
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 for y in range(h):
@@ -79,7 +79,7 @@ You create a white canvas to output. import other libraries.
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 24
@@ -102,7 +102,7 @@ We divide 0-255 grayscale into ten levels. Edit for-loops.
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 24
@@ -193,7 +193,7 @@ Add the last line to save an image.
 
 ```py
 from PIL import Image, ImageFont, ImageDraw
-img = Image.open('Lenna.png')
+img = Image.open('Lenna.png').convert('RGB')
 w, h = img.size
 pixels = img.load()
 fontsize = 12
